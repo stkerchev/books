@@ -27,7 +27,7 @@ puts "\n\tModification I"
 # str[start,length] = str2 => Replace str from start to length with str2
 # str[regexp] = str2 => Replace str using regexp with str2
 # str.chomp => Return a new string with carriage return characters removed from str # "hello\r\n" => "hello"
-p "hello\r".chomp
+p "hello\r".chomp # => "hello"
 # str << str2 => Modify str in place by appending str2 to the end
 # str[index] = str2 => Replace str at index with str2
 # str.chop => Return a new string with last character removed from str # "string" => "strin"
@@ -36,17 +36,21 @@ p "hello\r".chomp
 # str.reverse => Return a new string with the characters from str in reverse order # "abcd" => "dcba"
 # str.insert(index, str2) => Insert str2 before the character at the given index, modifying str
 
-# Substrings I
+puts "\n\tSubstrings"
 # str[start,length] => Element Reference - pass a start and a length, return a substring of length characters from start
+p 'hello'[1, 3] # => "ell"
 # str[regexp] => Element Reference - pass a Regexp and return the matching portion of the str
+p 'hello'[/[aeiou](.)/] # => "el"
 # str[range] => Element Reference - pass a range using beginning and end as offsets delimiting the substr to be returned
+p 'hello'[1..3] # => "ell"
 # str.chars => Return an array of characters in str
+p 'hello'.chars # => ["h", "e", "l", "l", "o"]
 # str.chr => Return a one-character string at the beginning of str
 # str * integer => Copy - return a new String containing integer copies of str.
 # str.lines => Return an array of lines in str
 # str.split(str2) => Return array of substrings by dividing str based on str2
 
-# Whitespace I
+puts "\n\tWhitespace I"
 # str.center(width, padstr) => Center str in width padded with padstr
 # str.lstrip => Return a copy of str with leading whitespace removed
 # str.strip => Return a copy of str with leading and trailing whitespace removed
@@ -57,13 +61,13 @@ p "hello\r".chomp
 # str.rjust(length, str2) => Return a new string of length with str right justified and padded with str2
 # str.strip! => Modify str by removing leading and trailing whitespace
 
-# Comparison I
+puts "\n\tComparison I"
 # str == obj => Equality - return whether string is equal to obj
 # str =` obj => Match - if obj is a Regexp, use it as a pattern to match against str, and return the position.
 # str <=> str2 => Compare - return -1, 0, +1 or nil depending on str is less than, eq to, or greater than str2
 # str.eql?(str2) => Return true if str is equal to str2 by length and content
 
-# Conversion I
+puts "\n\tConversion I"
 # str.hash => Return a hash based on str's length, content, and encoding
 # str.hex => Return number of str as hexadecimal digits
 # str.oct => Return octal number of str
@@ -73,7 +77,7 @@ p "hello\r".chomp
 # str.to_r => Convert str to rational number
 # str.to_sym => Convert str to symbol
 
-# Search / Replace II
+puts "\n\tSearch / Replace II"
 # str.gsub(regexp, other_hash) => Return a copy of str with all occurrences of regexp substituted with values of matched keys in other_hash
 # str.gsub!(str1, str2) => Modify str by replacing all occurrences of str1 with str2
 # str.index(regexp) => Return index of first occurrence of regexp in str
@@ -84,14 +88,14 @@ p "hello\r".chomp
 # str.gsub(regexp, str2) => Return a copy of str with all occurrences of regexp substituted with str2
 # str.sub(regexp, str2) => Return copy of str with first occurrence of regexp replaced by str2
 
-# Cases II
+puts "\n\t# Cases II"
 # str.downcase! => Modify str by replacing all uppercase letters with lowercase letters
 # str.capitalize! => Modify str by converting the first character to uppercase and the remainder to lowercase
 # str.casecmp(str2) => Case-insensitive compare of str with str2
 # str.swapcase! => Modify str by swapping case of all characters
 # str.upcase! => Modify string by replacing lowercase characters with uppercase characters
 
-# Search / Replace III
+puts "\n\tSearch / Replace III"
 # str.scan(regexp) => Return an array of strings matching regexp of str
 # str.replace(str2) => Replace the contents and taintedness of str with str2
 # str.tr(from_str, to_str) => Return copy of str with characters in from_str replaced by characters in to_str
@@ -119,14 +123,14 @@ p "hello o'a \n ".inspect
 p 'a'.sum
 # str.valid_encoding? => Returns true if str is encoded correctly
 
-# Iteration I
+puts "\n\tIteration I"
 # str.each_byte => Pass each byte in str to a block
 # str.each_char => Pass each character in str to a block
 # str.each_codepoint => Pass Integer ordinal of each character in str to a block
 # str.each_line => Pass each line of string to a block
 # str.upto(str2) => Iterate through successive values of str, starting at str and ending at str2 inclusive
 
-# Modification II
+puts "\n\tModification II"
 # str % arg => Format - use str as a format specification, and return the result of applying it to arg
 # str.chomp! => Modify str in place by removing carriage return characters from end of str
 # str.chop! => Modify str in place by removing last character
@@ -138,7 +142,7 @@ p 'a'.sum
 # str.reverse! => Modify str by reversing it in place
 # str.succ! => Modify str by incrementing characters starting from right most aphanumeric char (successor)
 
-# Conversion II
+puts "\n\tConversion II"
 # str.b => Return a copied string whose encoding is ASCII-8BIT
 # str.codepoints => Return an array of the Integer ordinals of the characters in str
 # str.crypt(str2) => Apply a one-way cryptographic hash to str with given salt str2
@@ -148,7 +152,7 @@ p 'a'.sum
 # str.unpack(str2) => Return array of decoded str using str2 as format
 # str.dump => Produce a version of str with all non-printing characters replace and all special characters escaped
 
-# Bytes I
+puts "\n\tBytes I"
 # str.bytes => Return an array of bytes in str
 # str.bytesize => Return the length of str in bytes
 # str.byteslice(index) => Byte Reference - return a substring of one byte at index of str
