@@ -23,3 +23,11 @@ class TestRoman < Minitest::Test
     assert_raises(RuntimeError) { Roman.new(5000) }
   end
 end
+
+
+class StringUtilsTest < Minitest::Test
+  def test_count_words
+    assert_equal(4, StringUtils.count_words("This is a test"))
+    assert_equal(4, StringUtils.count_words(" This is a test "))
+  end
+end
